@@ -1,0 +1,10 @@
+<h1>THE TEAM</h1>
+<ul>
+<% @employees.each do |employee| %>
+    <li><%=link_to employee.full_name, employee_path(employee) %></li><br>
+    <%= link_to "Delete Empoyee", employee_path(employee), class: 'button', method: "delete"%>
+<% end %>
+</ul>
+
+
+<%= link_to "Create an Employee", new_employee_path %>

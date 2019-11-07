@@ -1,0 +1,12 @@
+<h1><%= @employee.full_name %></h1>
+<hr>
+    <%= image_tag @employee.img_url %>
+<hr>
+<ul>
+    <li><%= @employee.first_name %></li>
+    <li><%= @employee.last_name %></li>
+    <li><%= @employee.alias %></li>
+    <li><%= @employee.title %></li>
+    <li><%= @employee.office %></li>
+    <li><%= @employee.dog.name %></li>
+</ul>
