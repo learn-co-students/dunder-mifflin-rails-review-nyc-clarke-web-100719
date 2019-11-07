@@ -1,0 +1,11 @@
+<h1>Welcome <%=@dog.name%> </h1>
+
+<%=@dog.name%>
+<%=@dog.breed%>
+<%=@dog.age%>
+<lu>
+
+<lu> <% @dog.employees.each do |empl|%></li>
+    <li> <%=empl.to_str %></li>
+    <%end%>
+</lu>
