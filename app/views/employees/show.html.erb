@@ -1,0 +1,12 @@
+<h1>Welcome <%=@employee.to_str%> </h1>
+
+<%=@employee.first_name%><br>
+<%=@employee.last_name%><br>
+<%=@employee.alias%><br>
+<%=@employee.title%><br>
+<%=@employee.office%><br>
+<br   />
+<%= image_tag @employee.img_url %><br>
+
+<%=link_to 'Delete', employee_path(@employee), method: "DELETE"%>
+
