@@ -1,0 +1,16 @@
+<h1><%= @employee.name %></h1>
+<br>
+
+<h3>Title: <%= @employee.title %></h3>
+<h3>Office: <%= @employee.office %></h3>
+<h3>Dog: <%= link_to @employee.dog.name, dog_path(@employee.dog) %></h3>
+<br>
+
+<% if @employee.img_url %>
+    <%= image_tag @employee.img_url %>
+<% end %>
+
+
+
+
+ 
