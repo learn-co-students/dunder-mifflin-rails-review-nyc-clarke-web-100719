@@ -1,0 +1,14 @@
+<div class="container">
+<h1>DOG</h1>
+Name: <%=@dog.name%>
+<br>
+Age: <%=@dog.age%>
+<br>
+Breed: <%=@dog.breed%>
+
+<%@dog.employees.each do |emp|%>
+<p>
+  <%=link_to emp.first_name, employee_path(emp)%>
+</p>
+<%end%>
+</div>

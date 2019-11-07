@@ -1,0 +1,8 @@
+<h1>EMPLOYEES</h1>
+
+  <%@employees.each do |employee|%>
+  <div class="employees">
+    <%= link_to employee.first_name, employee_path(employee)%>
+    <%= link_to "Delete Employee", employee_path(employee), method: "delete"%>
+  </div>
+  <%end%>

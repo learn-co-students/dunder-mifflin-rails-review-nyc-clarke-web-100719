@@ -1,0 +1,10 @@
+<h1>DOGS</h1>
+
+
+
+<%=link_to "Sorted", "/dogs/sorted"%>
+  <%@dogs.each do |dog|%>
+  <div class="dogs">
+    <%= link_to "#{dog.name} Number of owners: #{dog.employees.count}", dog_path(dog)%>
+  </div>
+  <%end%>
