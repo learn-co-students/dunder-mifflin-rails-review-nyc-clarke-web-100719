@@ -1,0 +1,10 @@
+
+<% @employees.each do |employee| %>
+  <h3>
+    <%= employee.to_s %>
+    <%= link_to("Show", employee_path(employee)) %>
+    <%= link_to("Edit", edit_employee_path(employee)) %>
+    <%= link_to("Delete", employee_path(employee), method: :delete) %>
+  </h3>
+<% end %>
+
