@@ -1,0 +1,9 @@
+<h1>The Team Squad</h1>
+<ol>
+  <% @employees.each do |employee| %>
+  <li>
+    <%= link_to employee.full_name, employee %> <%= button_to "delete",
+    employee, method: :delete, data: { confirm: "Are you sure???"} %>
+  </li>
+  <% end %>
+</ol>

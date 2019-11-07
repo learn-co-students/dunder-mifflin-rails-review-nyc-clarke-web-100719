@@ -1,0 +1,12 @@
+<h1>All Dogs</h1>
+<div>
+  <%= button_to "This Sort", dogs_path, method: :get, params: { sort:
+  params[:sort] == "true" ? false : true } %>
+</div>
+<div>
+  <% @dogs.each do |dog| %> <%= link_to dog.name, dog %>
+  <br />
+  Human Count: <%= dog.employees.count %>
+  <br />
+  <% end %>
+</div>
