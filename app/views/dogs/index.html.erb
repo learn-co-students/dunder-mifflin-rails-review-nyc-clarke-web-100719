@@ -1,0 +1,21 @@
+
+<button><%= Dog.toggle_sort %>SORT</button>
+
+<% if @is_sorted %>
+  <% @dogs.each do |dog| %>
+    <h3><%= link_to(dog.to_s, dog_path(dog)) %></h3>
+  <% end %>
+<% else %>
+  <% @dogs.each do |dog| %>
+    <h3><%= link_to(dog.to_s, dog_path(dog)) %></h3>
+  <% end %>
+<% end %>
+
+<%# @dogs.each do |dog| %>
+<!--  <h3>-->
+    <%#= dog.to_s %>
+    <%#= link_to("Show", employee_path(dog)) %>
+    <%#= link_to("Edit", edit_employee_path(dog)) %>
+    <%#= link_to("Delete", employee_path(dog), method: :delete) %>
+<!--  </h3>-->
+<%# end %>
