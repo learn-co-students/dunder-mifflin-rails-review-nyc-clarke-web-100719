@@ -1,0 +1,11 @@
+<h1>All Dogs</h1>
+<%= button_to "Toogle sort by number of employees", dogs_path, method: :get, params: { sort: params[:sort] == "true" ? false : true } %>
+
+
+<ul>
+    <% @dogs.each do |dog| %>
+        <li><%= link_to "#{dog.name} | #{dog.employees.count}", dog %></li>
+    <% end %>
+</ul>
+
+<% console %>
