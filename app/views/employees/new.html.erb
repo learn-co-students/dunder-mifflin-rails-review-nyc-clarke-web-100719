@@ -3,23 +3,40 @@
     <%= f.label :first_name %>:
     <%= f.text_field :first_name %><br />
   
-    <%= f.label :last_name %>:
+    <%= f.label :last_name %>
     <%= f.text_field :last_name %><br />
 
-    <%= f.label :alias %>:
+    <%= f.label :alias %>
     <%= f.text_field :alias %><br />
   
-    <%= f.label :title %>:
+    <%= f.label :title %>
     <%= f.text_field :title%><br />
 
-    <%= f.label :office %>:
+    <%= f.label :office %>
     <%= f.text_field :office %><br />
 
-    <%= f.label :img_url %>:
+    <%= f.label :img_url %>
     <%= f.text_field :img_url %><br />
 
-    <%= f.label :dog_id %>:
+    <%= f.label :dog_id %>
     <%= f.collection_select(:dog_id, Dog.all, :id, :name) %>
-
+    <!-- dog_id is referring to the object sending to params (key). all dogs is collection of options.
+    id is value for dog_id key. name is the attribute being shown to the user -->
+    
     <%= f.submit %>
+
+    <% if @employee.errors.any? %>
+        <div id="error_explanation">
+            <h2>
+            <%= pluralize(@employee.errors.count, "error") %>
+            prohibited this post from being saved:
+            </h2>
+ 
+            <ul>
+                <% @employee.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
 <% end %>

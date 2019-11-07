@@ -12,8 +12,13 @@ class EmployeesController < ApplicationController
     end
 
     def create 
-        @employee = Employee.create(employee_params)
-        redirect_to employee_path(@employee)
+        @employee = Employee.new(employee_params)
+        if @employee.valid?
+            @employee.save
+            redirect_to employee_path(@employee)
+        else
+            render :new
+        end
     end
 
     def edit
@@ -22,13 +27,17 @@ class EmployeesController < ApplicationController
 
     def update
         @employee = Employee.find(params[:id])
-        @employee.update(employee_params)
-        redirect_to employee_path(@employee)
+        
+        if @employee.update(employee_params)
+            redirect_to employee_path(@employee)
+        else
+            render :edit
+        end
     end
 
     private
 
-    def employee_params
+    def employee_params #require is taking a section of the params hash (nested one level), and permitting each value from the key-value pair
         params.require(:employee).permit(:first_name, :last_name, :alias, :title, :office, :img_url, :dog_id)
     end
 end
