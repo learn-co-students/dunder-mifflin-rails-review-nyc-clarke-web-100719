@@ -1,0 +1,10 @@
+Name: <%= @dog.name %> <br>
+Breed: <%= @dog.breed %><br>
+Age: <%= @dog.age %><br>
+<h4> <%= "#{@dog.name}'s Hoomans"%></h4>
+<% @dog.employees.each do |employee| %>
+<%=link_to employee.first_name, employee_path(employee)%>
+<%end%>
+<!--
+try to get a full name method for dog
+-->
