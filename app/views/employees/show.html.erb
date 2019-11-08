@@ -1,0 +1,20 @@
+<h1><%= @employee.to_s %></h1>
+
+<%= image_tag @employee.img_url%>
+
+<h2>
+    Dog:
+</h2>
+    <%= link_to @dog.name, @dog %>
+
+<h4>Alias:</h4>
+<%= @employee.alias %>
+
+<h4>Title: </h4>
+<%= @employee.title %>
+
+<h4>Office: </h4>
+<%= @employee.office %>
+
+<h5><%= button_to "Edit", edit_employee_path(@employee), { method: :get }%></h5>
+
